@@ -5,13 +5,17 @@ session_start();
 require_once './_partials/header.php';
 require_once './model/getdata.php';
 require_once './_partials/helper.php';
-$listPBarang = get_data( "SELECT DISTINCT tanggal_transaksi,perihal FROM peminjaman_barang WHERE akun_id =  '$_SESSION[nim]'" );
-$listPRuangan = get_data( "SELECT DISTINCT tanggal_transaksi,perihal FROM peminjaman_ruangan WHERE akun_id =  '$_SESSION[nim]'" );
+$listPBarang = get_data( "SELECT DISTINCT tanggal_transaksi,perihal,status FROM peminjaman_barang WHERE akun_id =  '$_SESSION[nim]'" );
+$listPRuangan = get_data( "SELECT DISTINCT tanggal_transaksi,perihal,status FROM peminjaman_ruangan WHERE akun_id =  '$_SESSION[nim]'" );
 
-$mergedPengajuan =  $listPBarang + $listPRuangan;
+$mergedArr = array_merge ($listPRuangan, $listPBarang);
+
+$mergedArr = array_map('json_encode', $mergedArr);
+$mergedArr = array_unique($mergedArr);
+$mergedPengajuan = array_map('json_decode', $mergedArr);
 
 function get_fasilitas($perihal,$type){
-    $q = '';
+    $q ='';
     if($type == 'barang'){
         $q = "SELECT b.nama_barang,pb.tanggal_transaksi,pb.jumlah,pb.perihal 
                     FROM peminjaman_barang pb
@@ -70,12 +74,18 @@ function get_fasilitas($perihal,$type){
                                             <td style="width: 5%;"><?php echo $key + 1 ?></td>
                                             <td><?php echo $pengajuan->tanggal_transaksi ?></td>
                                             <td><?php echo $pengajuan->perihal ?></td>
+	                                        <?php $progress = get_status_message( $pengajuan->status)?>
                                             <td style="width: 40%;">
+                                                <div class="progress-wrapper">
+                                                    <span class="progress-label d-flex justify-content-start font-weight-light"><?php echo $progress->message ?></span>
                                                 <div class="progress progress-sm mb-3">
-                                                    <div id="progress-bar-status" class="progress-bar"
+                                                    <div id="progress-bar-status" class="progress-bar bg-<?php echo $progress->color?>"
                                                          role="progressbar"
-                                                         style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
+                                                         style="width: <?php echo $progress->number?>%" aria-valuenow="<?php echo $progress->number?>" aria-valuemin="0"
+                                                         aria-valuemax="100">
+                                                        <span class="progress-value font-weight-bold"><?php echo $progress->number ?>%</span>
+                                                    </div>
+                                                </div>
                                                 </div>
                                             </td>
                                             <td>

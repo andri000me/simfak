@@ -1453,58 +1453,59 @@
     <table id="377" parent="42" name="cart_ruangan"/>
     <table id="378" parent="42" name="level"/>
     <table id="379" parent="42" name="mahasiswa"/>
-    <table id="380" parent="42" name="pegawai"/>
-    <table id="381" parent="42" name="peminjaman_barang"/>
-    <table id="382" parent="42" name="peminjaman_ruangan"/>
-    <table id="383" parent="42" name="prodi"/>
-    <table id="384" parent="42" name="ruangan"/>
-    <table id="385" parent="42" name="user"/>
-    <column id="386" parent="374" name="id">
+    <table id="380" parent="42" name="notifikasi"/>
+    <table id="381" parent="42" name="pegawai"/>
+    <table id="382" parent="42" name="peminjaman_barang"/>
+    <table id="383" parent="42" name="peminjaman_ruangan"/>
+    <table id="384" parent="42" name="prodi"/>
+    <table id="385" parent="42" name="ruangan"/>
+    <table id="386" parent="42" name="user"/>
+    <column id="387" parent="374" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="374" name="username">
+    <column id="388" parent="374" name="username">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="374" name="password">
+    <column id="389" parent="374" name="password">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="389" parent="374" name="level_id">
+    <column id="390" parent="374" name="level_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="390" parent="374" name="PRIMARY">
+    <key id="391" parent="374" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="391" parent="375" name="id">
+    <column id="392" parent="375" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="375" name="nama_barang">
+    <column id="393" parent="375" name="nama_barang">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="393" parent="375" name="jumlah">
+    <column id="394" parent="375" name="jumlah">
       <Position>3</Position>
       <DataType>int(3)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="394" parent="375" name="waktu_penambahan">
+    <column id="395" parent="375" name="waktu_penambahan">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
@@ -1512,210 +1513,203 @@
       <ColumnKind>normal</ColumnKind>
       <OnUpdate>current_timestamp()</OnUpdate>
     </column>
-    <key id="395" parent="375" name="PRIMARY">
+    <key id="396" parent="375" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="396" parent="376" name="id">
+    <column id="397" parent="376" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="376" name="barang_id">
+    <column id="398" parent="376" name="barang_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="376" name="akun_id">
+    <column id="399" parent="376" name="akun_id">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="376" name="jumlah">
+    <column id="400" parent="376" name="jumlah">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="400" parent="376" name="PRIMARY">
+    <key id="401" parent="376" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="401" parent="377" name="id">
+    <column id="402" parent="377" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="377" name="ruangan_id">
+    <column id="403" parent="377" name="ruangan_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="377" name="akun_id">
+    <column id="404" parent="377" name="akun_id">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="404" parent="377" name="PRIMARY">
+    <key id="405" parent="377" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="405" parent="378" name="id">
+    <column id="406" parent="378" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="406" parent="378" name="nama_level">
+    <column id="407" parent="378" name="nama_level">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="407" parent="378" name="PRIMARY">
+    <key id="408" parent="378" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="408" parent="379" name="nim">
+    <column id="409" parent="379" name="nim">
       <Position>1</Position>
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="379" name="nama_mahasiswa">
+    <column id="410" parent="379" name="nama_mahasiswa">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="379" name="email_mahasiswa">
+    <column id="411" parent="379" name="email_mahasiswa">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="411" parent="379" name="PRIMARY">
+    <key id="412" parent="379" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>nim</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="412" parent="380" name="id">
+    <column id="413" parent="380" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="380" name="nama_pegawai">
+    <column id="414" parent="380" name="pengirim">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="414" parent="380" name="email_pegawai">
+    <column id="415" parent="380" name="penerima">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="415" parent="380" name="PRIMARY">
+    <column id="416" parent="380" name="pesan">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="417" parent="380" name="link">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="418" parent="380" name="kategori">
+      <Position>6</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="419" parent="380" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="416" parent="381" name="id">
+    <column id="420" parent="381" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="381" name="barang_id">
+    <column id="421" parent="381" name="nama_pegawai">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="422" parent="381" name="email_pegawai">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="423" parent="381" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="424" parent="382" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="425" parent="382" name="barang_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="381" name="tanggal_transaksi">
+    <column id="426" parent="382" name="tanggal_transaksi">
       <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <DataType>date|0s</DataType>
+      <DefaultExpression>&apos;0000-00-00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
-      <OnUpdate>current_timestamp()</OnUpdate>
     </column>
-    <column id="419" parent="381" name="tanggal_kembali">
+    <column id="427" parent="382" name="tanggal_kembali">
       <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
+      <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0000-00-00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="420" parent="381" name="status">
+    <column id="428" parent="382" name="status">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="421" parent="381" name="jumlah">
+    <column id="429" parent="382" name="jumlah">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="422" parent="381" name="akun_id">
+    <column id="430" parent="382" name="akun_id">
       <Position>7</Position>
       <DataType>varchar(25)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="423" parent="381" name="perihal">
-      <Position>8</Position>
-      <DataType>text|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="424" parent="381" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="425" parent="382" name="id">
-      <Position>1</Position>
-      <DataType>int(11) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="426" parent="382" name="ruangan_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="427" parent="382" name="tanggal_transaksi">
-      <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="428" parent="382" name="status">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="429" parent="382" name="akun_id">
-      <Position>5</Position>
-      <DataType>varchar(25)|0s</DataType>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="430" parent="382" name="tanggal_kembali">
-      <Position>6</Position>
-      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="431" parent="382" name="perihal">
-      <Position>7</Position>
+      <Position>8</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1731,62 +1725,107 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="383" name="nama_prodi">
+    <column id="434" parent="383" name="ruangan_id">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="435" parent="383" name="PRIMARY">
+    <column id="435" parent="383" name="tanggal_transaksi">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="436" parent="383" name="tanggal_kembali">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <DefaultExpression>&apos;0000-00-00&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="437" parent="383" name="status">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="438" parent="383" name="akun_id">
+      <Position>6</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="439" parent="383" name="perihal">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="440" parent="383" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="436" parent="384" name="id">
+    <column id="441" parent="384" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="437" parent="384" name="nama_ruangan">
+    <column id="442" parent="384" name="nama_prodi">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="438" parent="384" name="prodi_id">
+    <key id="443" parent="384" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="444" parent="385" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="445" parent="385" name="nama_ruangan">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="446" parent="385" name="prodi_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="439" parent="384" name="status">
+    <column id="447" parent="385" name="status">
       <Position>4</Position>
       <DataType>int(1)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="440" parent="384" name="PRIMARY">
+    <key id="448" parent="385" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="441" parent="385" name="id">
+    <column id="449" parent="386" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="442" parent="385" name="identitas">
+    <column id="450" parent="386" name="identitas">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="443" parent="385" name="id_level">
+    <column id="451" parent="386" name="id_level">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="444" parent="385" name="PRIMARY">
+    <key id="452" parent="386" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

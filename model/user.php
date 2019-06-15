@@ -64,13 +64,18 @@ function login( $post ) {
 	$database = new Database();
 	$uname    = $post['nim'];
 	$pass     = $post['pass'];
-	$query    = "SELECT akun.id,akun.username,nama_mahasiswa FROM akun left outer join mahasiswa on akun.username = nim WHERE akun.username = '$uname' AND password = '$pass'";
+	$query    = "SELECT akun.id,akun.username,nama_mahasiswa,nama_level 
+					FROM akun 
+				    LEFT OUTER JOIN mahasiswa on akun.username = nim
+					LEFT OUTER JOIN level ON akun.level_id = level.id 
+					WHERE akun.username = '$uname' AND password = '$pass'";
 	if ( $database->query( $query ) ) {
 		$results = $database->fetch();
 		if ( count( $results ) > 0 ) {
 			$_SESSION['id']    = $results[0]->id;
 			$_SESSION['nim']   = $results[0]->username;
 			$_SESSION['name']  = $results[0]->nama_mahasiswa;
+			$_SESSION['level'] = $results[0]->nama_level;
 			$_SESSION['login'] = true;
 			header( "Location: ../index.php" );
 		} else {
