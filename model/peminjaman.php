@@ -3,6 +3,7 @@ session_start();
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 require_once 'database.php';
+require_once 'notifikasi.php';
 
 function add( $post ) {
 
@@ -50,11 +51,25 @@ function add( $post ) {
 	echo json_encode( array( 'status' => 'success' ) );
 }
 
-function get_all_peminjaman() {
+function get_all_peminjaman($for = null) {
 	$db = new Database();
-	$db->query( "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pr.akun_id FROM peminjaman_ruangan pr LEFT OUTER JOIN mahasiswa m ON pr.akun_id = m.nim" );
+	$q = "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pr.akun_id FROM peminjaman_ruangan pr LEFT OUTER JOIN mahasiswa m ON pr.akun_id = m.nim";
+	if($for!= null){
+		if($for == 'kabag umum'){
+			//kabag umum only see peminjaman with status == 1
+			$q .= " WHERE status = 1";
+		}
+	}
+	$db->query($q);
 	$listPBarang = $db->fetch();
-	$db->query( "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pb.akun_id FROM peminjaman_barang pb LEFT OUTER JOIN mahasiswa m ON pb.akun_id = m.nim" );
+	$q = "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pb.akun_id FROM peminjaman_barang pb LEFT OUTER JOIN mahasiswa m ON pb.akun_id = m.nim";
+	if($for!= null){
+		if($for == 'kabag umum'){
+			//kabag umum only see peminjaman with status == 1
+			$q .= " WHERE status = 1";
+		}
+	}
+	$db->query($q);
 	$listPRuangan = $db->fetch();
 
 	$mergedArr = array_merge( $listPRuangan, $listPBarang );
@@ -65,9 +80,9 @@ function get_all_peminjaman() {
 	return $mergedPengajuan = array_map( 'json_decode', $mergedArr );
 }
 
-function show_peminjaman($perihal, $type ,$akun_id) {
+function show_peminjaman( $perihal, $type, $akun_id ) {
 	$db = new Database();
-	$q = "";
+	$q  = "";
 	if ( $type == 'barang' ) {
 		$q = "SELECT b.nama_barang,pb.tanggal_transaksi,pb.jumlah,pb.perihal 
                     FROM peminjaman_barang pb
@@ -81,8 +96,43 @@ function show_peminjaman($perihal, $type ,$akun_id) {
                     LEFT OUTER JOIN prodi p ON r.prodi_id = p.id
                     WHERE pr.akun_id = '$akun_id' AND pr.perihal = '$perihal'";
 	}
-	$db->query($q);
+	$db->query( $q );
+
 	return $db->fetch();
+}
+
+function change_status( $post ) {
+	$akun_id = $post['nim'];
+	$perihal = $post['perihal'];
+	$status  = $post['status'];
+
+	$db = new Database();
+	$q  = "UPDATE peminjaman_barang SET status = $status WHERE akun_id = '$akun_id' AND perihal = '$perihal'";
+	if ( $db->query( $q ) ) {
+		$q = "UPDATE peminjaman_ruangan SET status = $status WHERE akun_id = '$akun_id' AND perihal = '$perihal'";
+		if ( $db->query( $q ) ) {
+			$message = '';
+			if($post['status'] == 1){
+				$message = "Permohonan berhasil dikirim ke kabag umum";
+			}
+			if($post['status'] == 2){
+				$message = "Persetujuan perminjaman berhasil";
+			}
+			if($post['status'] == 22){
+				$message = "Penolakan perminjaman berhasil";
+			}
+			$_SESSION['status'] = (object) [ 'status'  => 'success',
+			                                 'message' => $message ];
+		}
+	} else {
+		$_SESSION['status'] = (object) [ 'status' => 'fail', 'message' => 'Operasi gagal' ];
+	}
+	header('Location: ../peminjaman-list.php');
+
+}
+
+function cetak_permohonan( $post ) {
+
 }
 
 if ( isset( $_GET['f'] ) ) {
@@ -103,6 +153,23 @@ if ( isset( $_POST['button'] ) ) {
 			break;
 		case 'add':
 			add( $post );
+			break;
+		case 'send':
+			change_status( $post );
+			send_notif('bmn','kabag umum','Permintaan persetujuan peminjaman fasilitas','../peminjaman-list.php','Perizinan');
+			break;
+		case 'accept':
+			$post['status'] = 2;
+			change_status( $post );
+			send_notif('kabag umum',$post['nim'],"Peminjaman fasilitas perihal $post[perihal], <b class='text-success'>diterima</b> oleh kabag umum",'../peminjaman-list.php','Perizinan');
+			break;
+		case 'deny':
+			$post['status'] = 22;
+			change_status( $post );
+			send_notif('kabag umum',$post['nim'],"Peminjaman fasilitas perihal $post[perihal], <b class='text-danger'>ditolak</b> oleh kabag umum",'../peminjaman-list.php','Perizinan');
+			break;
+		case 'print':
+			cetak_permohonan( $post );
 			break;
 		default:
 			break;

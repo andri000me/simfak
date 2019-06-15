@@ -1,3 +1,9 @@
+<?php
+require_once 'model/notifikasi.php';
+$session = $_SESSION;
+$count_notif = get_count_notif($session['nim']);
+$data_notif = get_data_notif($session['nim']);
+?>
 <div class="main-navbar  bg-white">
 	<div class="container p-0">
 		<!-- Main Navbar -->
@@ -23,33 +29,23 @@
 					<a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="nav-link-icon__wrapper">
 							<i class="material-icons"></i>
-							<span class="badge badge-pill badge-danger">2</span>
+							<span class="badge badge-pill badge-danger"><?php echo $count_notif[0]->number ?></span>
 						</div>
 					</a>
 					<div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
-						<a class="dropdown-item" href="#">
-							<div class="notification__icon-wrapper">
-								<div class="notification__icon">
-									<i class="material-icons"></i>
-								</div>
-							</div>
-							<div class="notification__content">
-								<span class="notification__category">Analytics</span>
-								<p>Your website’s active users count increased by <span class="text-success text-semibold">28%</span> in the last week. Great job!</p>
-							</div>
-						</a>
-						<a class="dropdown-item" href="#">
-							<div class="notification__icon-wrapper">
-								<div class="notification__icon">
-									<i class="material-icons"></i>
-								</div>
-							</div>
-							<div class="notification__content">
-								<span class="notification__category">Sales</span>
-								<p>Last week your store’s sales count decreased by <span class="text-danger text-semibold">5.52%</span>. It could have been worse!</p>
-							</div>
-						</a>
-						<a class="dropdown-item notification__all text-center" href="#"> View all Notifications </a>
+						<?php foreach ( $data_notif as $item_notif ):?>
+                            <a class="dropdown-item" href="<?php echo $item_notif->link ?>">
+                                <div class="notification__icon-wrapper">
+                                    <div class="notification__icon">
+                                        <i class="material-icons">info</i>
+                                    </div>
+                                </div>
+                                <div class="notification__content">
+                                    <span class="notification__category text-uppercase"><?php echo $item_notif->kategori?></span>
+                                    <p><?php echo $item_notif->pesan?></p>
+                                </div>
+                            </a>
+						<?php endforeach;?>
 					</div>
 				</li>
 				<li class="nav-item dropdown">

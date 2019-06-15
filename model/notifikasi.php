@@ -14,4 +14,9 @@ function get_data_notif($penerima){
 	$db->query($q);
 	return $db->fetch();
 }
+function send_notif($pengirim,$penerima,$pesan,$link,$kategori){
+	$db = new Database();
+	$q = "INSERT INTO notifikasi(pengirim, penerima, pesan,link,kategori) VALUES ('$pengirim','$penerima','$pesan','$link','$kategori')";
+	$db->query( $q );
+}
 ?>

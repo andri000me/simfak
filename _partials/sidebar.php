@@ -39,12 +39,12 @@
           <span>Peminjaman</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="../peminjaman-list.php">
-          <i class="material-icons">info</i>
-          <span>Informasi</span>
-        </a>
-      </li>
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link " href="../peminjaman-list.php">-->
+<!--          <i class="material-icons">info</i>-->
+<!--          <span>Informasi</span>-->
+<!--        </a>-->
+<!--      </li>-->
     </ul>
     <h6 class="main-sidebar__nav-title">Master</h6>
     <ul class="nav nav--no-borders flex-column">
