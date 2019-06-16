@@ -64,7 +64,7 @@ header( "content-disposition: attachment;filename=Surat Pengajuan Magang " . $ta
 </head>
 <body>
 <div class="Section1">
-<!--    <img src="images/header2.png" width="100%" height="100%">-->
+    <img src="https://raw.githubusercontent.com/widiu7omo/simfak/master/images/header2.png" width="100%" height="100%">
     <hr style="color: #000; border: solid black 4px;height: 4px;">
     <table>
         <tr>
