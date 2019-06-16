@@ -176,7 +176,7 @@ if ( isset( $_POST['button'] ) ) {
 			update_notif('bmn','kabag umum',$new_pesan);
 			break;
 		case 'print':
-			cetak_permohonan( $post );
+//			cetak_permohonan( $post );
 			break;
 		default:
 			break;

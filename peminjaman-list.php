@@ -106,7 +106,7 @@ $get              = $_GET;
                                         </button>
                                     </form>
                                     <!--                                  TODO:active button sending to kabag      -->
-                                    <form action="./model/peminjaman.php" method="post">
+                                    <form action="./surat_pengajuan.php" method="post">
                                         <input type="hidden" name="nim" value="<?php echo $peminjaman->akun_id ?>">
                                         <input type="hidden" name="perihal" value="<?php echo $peminjaman->perihal ?>">
                                         <input type="hidden" name="status" value="1">
