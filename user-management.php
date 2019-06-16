@@ -1,6 +1,7 @@
 <?php
 include( './_partials/header.php' );
 require_once './router/index.php';
+role( 'mahasiswa',true);
 require_once './model/user.php';
 $akuns = showAccounts(null,['level','level_id = level.id'],'akun.id as akun_id,level.id as level_id,nama_level,username,password');
 ?>

@@ -1,6 +1,7 @@
 <?php
 require './_partials/header.php';
 require_once './router/index.php';
+role( 'mahasiswa',true);
 require_once './model/user.php';
 require_once './model/getdata.php';
 if(isset($_GET['id'])){
