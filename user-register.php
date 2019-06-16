@@ -1,7 +1,7 @@
 <?php 
 //session_start();
 require_once './_partials/header.php';
-require_once './router/index.php';
+//require_once './router/index.php';
 ?>
 
 <body class="h-100" data-gr-c-s-loaded="true">
