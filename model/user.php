@@ -77,7 +77,11 @@ function login( $post ) {
 			$_SESSION['name']  = $results[0]->nama_mahasiswa;
 			$_SESSION['level'] = $results[0]->nama_level;
 			$_SESSION['login'] = true;
-			header( "Location: ../index.php" );
+			if($_SESSION['level'] != 'mahasiswa'){
+				header( "Location: ../index.php" );
+			}
+			else header('Location: ../peminjaman-user-list.php?kind=ruangan');
+
 		} else {
 			$_SESSION['status'] = (object) [ 'status' => 'fail', 'message' => 'Login gagal' ];
 			header( "Location: ../user-login.php" );

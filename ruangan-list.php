@@ -1,5 +1,6 @@
 <?php
 require_once './_partials/header.php';
+require_once './router/index.php';
 require_once './model/ruangan.php';
 $ruangans = showRuanganWithJoin();
 ?>

@@ -1,4 +1,6 @@
-<?php require_once './_partials/header.php';
+<?php
+require_once './_partials/header.php';
+require_once './router/index.php';
 require_once './model/peminjaman.php';
 require_once './_partials/helper.php';
 $mergedPeminjaman = [];

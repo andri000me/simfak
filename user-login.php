@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once './_partials/header.php'?>
+require_once './_partials/header.php';?>
 <body class="h-100" data-gr-c-s-loaded="true">
     <div class="container-fluid icon-sidebar-nav h-100 nav-wrapper mt-5">
         <div class="row h-100">

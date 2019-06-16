@@ -49,11 +49,11 @@ $data_notif = get_data_notif($session['level']);
           class="d-none d-md-inline-block"><?php echo $session['name']; ?></span>
       </a>
       <div class="dropdown-menu dropdown-menu-small">
-        <a class="dropdown-item" href="user-profile.html"><i class="material-icons"></i>
-          Profile</a>
-        <a class="dropdown-item" href="edit-user-profile.html"><i class="material-icons"></i> Edit Profile</a>
-        <a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons"></i> Files</a>
-        <a class="dropdown-item" href="transaction-history.html"><i class="material-icons"></i> Transactions</a>
+<!--        <a class="dropdown-item" href="user-profile.html"><i class="material-icons"></i>-->
+<!--          Profile</a>-->
+<!--        <a class="dropdown-item" href="edit-user-profile.html"><i class="material-icons"></i> Edit Profile</a>-->
+<!--        <a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons"></i> Files</a>-->
+<!--        <a class="dropdown-item" href="transaction-history.html"><i class="material-icons"></i> Transactions</a>-->
         <div class="dropdown-divider"></div>
         <a class="dropdown-item text-danger" href="../model/user.php?f=logout">
           <i class="material-icons text-danger"></i> Logout </a>

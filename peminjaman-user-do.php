@@ -1,6 +1,7 @@
 <?php
-session_start();
 require_once './_partials/header.php';
+require_once './router/index.php';
+role( 'mahasiswa',false);
 require_once './model/getdata.php';
 
 $barangs  = get_data( "SELECT barang.nama_barang,cart_barang.barang_id,cart_barang.jumlah 

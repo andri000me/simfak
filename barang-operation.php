@@ -1,4 +1,6 @@
-<?php require './_partials/header.php';
+<?php
+require './_partials/header.php';
+require_once './router/index.php';
 require_once './model/barang.php';
 require_once './model/getdata.php';
 if(isset( $_GET['id'])){

@@ -45,7 +45,7 @@ function add( $post ) {
 	}
 
 	//set success
-	$q = "INSERT INTO notifikasi(pengirim, penerima, pesan,link,kategori) VALUES ('$_SESSION[nim]','bmn','$_SESSION[name] mengajukan peminjaman fasilitas kampus.','../peminjaman-list.php','permohonan')";
+	$q = "INSERT INTO notifikasi(pengirim, penerima, pesan,link,kategori) VALUES ('$_SESSION[nim]','bmn','Mahasiswa mengajukan peminjaman fasilitas kampus.','../peminjaman-list.php','permohonan')";
 	$db->query( $q );
 	$_SESSION['status'] = (object) [ 'status' => 'success', 'message' => 'Pengajuan sedang diproses' ];
 	echo json_encode( array( 'status' => 'success' ) );
@@ -156,17 +156,24 @@ if ( isset( $_POST['button'] ) ) {
 			break;
 		case 'send':
 			change_status( $post );
-			send_notif('bmn','kabag umum','Permintaan persetujuan peminjaman fasilitas','../peminjaman-list.php','Perizinan');
+			send_notif('bmn','kabag umum',"Permintaan persetujuan peminjaman fasilitas perihal $post[perihal]",'../peminjaman-list.php','Perizinan');
+			update_notif($post['nim'],'bmn',"Mahasiswa mengajukan peminjaman fasilitas kampus.");
 			break;
 		case 'accept':
 			$post['status'] = 2;
 			change_status( $post );
-			send_notif('kabag umum',$post['nim'],"Peminjaman fasilitas perihal $post[perihal], <b class='text-success'>diterima</b> oleh kabag umum",'../peminjaman-list.php','Perizinan');
+			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-success">diterima</b> oleh kabag umum';
+			send_notif('kabag umum',$post['nim'],$pesan,'../peminjaman-list.php','Perizinan');
+			$new_pesan = "Permintaan persetujuan peminjaman fasilitas perihal ".$post['perihal'];
+			update_notif('bmn','kabag umum',$new_pesan);
 			break;
 		case 'deny':
 			$post['status'] = 22;
 			change_status( $post );
-			send_notif('kabag umum',$post['nim'],"Peminjaman fasilitas perihal $post[perihal], <b class='text-danger'>ditolak</b> oleh kabag umum",'../peminjaman-list.php','Perizinan');
+			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-danger">ditolak</b> oleh kabag umum';
+			send_notif('kabag umum',$post['nim'],$pesan,'../peminjaman-list.php','Perizinan');
+			$new_pesan = "Permintaan persetujuan peminjaman fasilitas perihal ".$post['perihal'];
+			update_notif('bmn','kabag umum',$new_pesan);
 			break;
 		case 'print':
 			cetak_permohonan( $post );

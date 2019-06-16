@@ -1,5 +1,7 @@
 <?php
 require_once './_partials/header.php';
+require_once './router/index.php';
+role( 'mahasiswa',true);
 require_once './model/barang.php';
 $barangs  = showBarang();
 ?>

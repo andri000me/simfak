@@ -3,6 +3,8 @@ session_start();
 //error_reporting( E_ALL );
 //ini_set( 'display_errors', 1 );
 require_once './_partials/header.php';
+require_once './router/index.php';
+role( 'mahasiswa',false);
 require_once './model/getdata.php';
 require_once './_partials/helper.php';
 $listPBarang = get_data( "SELECT DISTINCT tanggal_transaksi,perihal,status FROM peminjaman_barang WHERE akun_id =  '$_SESSION[nim]'" );

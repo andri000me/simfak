@@ -1,6 +1,8 @@
 <?php 
-session_start();
-require_once './_partials/header.php' ?>
+//session_start();
+require_once './_partials/header.php';
+require_once './router/index.php';
+?>
 
 <body class="h-100" data-gr-c-s-loaded="true">
     <div class="container-fluid icon-sidebar-nav h-100 nav-wrapper mt-5">

@@ -10,6 +10,7 @@ foreach ( $total_barang_dipinjam as $tbd ) {
 	$tot_barang_dipinjam += $tbd->jumlah;
 }
 
+
 $total_ruangan          = get_data( "SELECT COUNT(*) AS jumlah FROM ruangan" );
 $total_ruangan_dipinjam = get_data( "SELECT COUNT(*) AS jumlah FROM peminjaman_ruangan" );
 $tot_ruangan            = $total_ruangan[0]->jumlah;
@@ -29,7 +30,6 @@ $tot_ruangan_dipinjam   = $total_ruangan_dipinjam[0]->jumlah;
                         <span class="stats-small__percentage stats-small__percentage--increase"><?php echo round( ( $tot_barang_dipinjam / $tot_barang ) * 100, 2 ) ?>%</span>
                     </div>
                 </div>
-                <canvas height="120" class="blog-overview-stats-small-1"></canvas>
             </div>
         </div>
     </div>
@@ -45,7 +45,6 @@ $tot_ruangan_dipinjam   = $total_ruangan_dipinjam[0]->jumlah;
                         <span class="stats-small__percentage stats-small__percentage--increase"><?php echo round( ( $tot_ruangan_dipinjam / $tot_ruangan ) * 100, 2 ) ?>%</span>
                     </div>
                 </div>
-                <canvas height="120" class="blog-overview-stats-small-2"></canvas>
             </div>
         </div>
     </div>
