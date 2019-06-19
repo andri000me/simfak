@@ -10,7 +10,7 @@ $get        = $_GET;
 $table      = isset( $get['kind'] ) && $get['kind'] == 'barang' ? 'barang' : 'ruangan';
 $objectName = isset( $get['kind'] ) && $get['kind'] == 'barang' ? 'nama_barang' : 'nama_ruangan';
 $query      = isset( $get['kind'] ) && $get['kind'] == 'barang' ? "SELECT * FROM barang"
-	: "SELECT ruangan.id,ruangan.nama_ruangan,ruangan.status,prodi.nama_prodi FROM ruangan LEFT OUTER JOIN prodi ON ruangan.prodi_id = prodi.id";
+	: "SELECT ruangan.id,ruangan.nama_ruangan,ruangan.status,prodi.nama_prodi FROM ruangan LEFT OUTER JOIN prodi ON ruangan.prodi_id = prodi.id WHERE ruangan.status = 0";
 $datas      = get_data( $query );
 ?>
 <body class="h-100" data-gr-c-s-loaded="true">
