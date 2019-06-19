@@ -12,16 +12,7 @@ require_once './_partials/header.php';
                     <div class="row no-gutters h-100">
                         <div class="col-lg-4 col-md-6 auth-form mx-auto my-auto">
                             <?php
-                            if(isset($_SESSION['status'])){
-                                $status = $_SESSION['status'];
-                                if($status == 'success'){
-                                    echo '<div class="alert alert-success">Registrasi Berhasil <a href="./user-login.php">klik untuk login</a></div>';
-                                }
-                                if($status == 'fail'){
-                                    echo '<div class="alert alert-danger">Akun sudah terdaftar<a href="./user-login.php">klik untuk login</a></div>';
-                                }
-                                session_destroy();
-                            }
+                                require './components/alert.php'
                             ?>
                             <div class="card">
                                 <div class="card-body">

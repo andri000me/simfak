@@ -12,6 +12,7 @@ else {
 	$mergedPeminjaman = get_all_peminjaman();
 }
 $get              = $_GET;
+//var_dump($mergedPeminjaman);
 ?>
 <body class="h-100" data-gr-c-s-loaded="true">
 <div class="container-fluid">

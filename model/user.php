@@ -18,6 +18,7 @@ function register( $post ) {
 			$_SESSION['status'] = (object) [ 'status' => 'success', 'message' => 'Anda berhasil registrasi' ];
 		}
 	}
+	
 	header( "Location: ../user-register.php" );
 }
 //add user ony for admin

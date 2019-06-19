@@ -1,6 +1,6 @@
 <?php
 //TODO:Tambahkan redirect untuk handling tidak login
-session_start();
+//session_start();
 require_once 'database.php';
 function showBarang( $id = null ) {
 	$db    = new Database();

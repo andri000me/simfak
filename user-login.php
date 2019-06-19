@@ -1,5 +1,5 @@
 <?php 
-session_start();
+//session_start();
 require_once './_partials/header.php';?>
 <body class="h-100" data-gr-c-s-loaded="true">
     <div class="container-fluid icon-sidebar-nav h-100 nav-wrapper mt-5">
@@ -8,10 +8,8 @@ require_once './_partials/header.php';?>
                 <div class="main-content-container container-fluid px-4 my-auto h-100">
                     <div class="row no-gutters h-100">
                         <div class="col-lg-4 col-md-6 auth-form mx-auto my-auto">
-                        <?php
-                            require('./components/alert.php');
-                            ?>
-                            <div class="card">
+                        <?php require('./components/alert.php'); ?>
+                            <div class="card"> 
                                 <div class="card-body">
                                     <img class="auth-form__logo d-table mx-auto mb-3"
                                         src="images/shards-dashboards-logo.svg"

@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once 'database.php';
 function showRuangan($id = null){
 	$db = new Database();
