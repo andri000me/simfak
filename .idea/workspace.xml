@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1e19301b-82d5-4a82-a3bd-78bcd438a4bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/js.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/navbar-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/navbar-user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peminjaman-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/peminjaman-list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/router/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,92 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peminjaman-list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="162" column="47" lean-forward="true" selection-start-line="162" selection-start-column="47" selection-end-line="162" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_partials/navbar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_partials/sidebar.php">
+        <entry file="file://$PROJECT_DIR$/model/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2478">
-              <caret line="177" column="79" selection-start-line="177" selection-start-column="79" selection-end-line="177" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peminjaman-user-status.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peminjaman-user-list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_partials/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_partials/js.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="12" column="62" lean-forward="true" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_partials/navbar-user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/router/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="28">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -187,6 +100,8 @@
       <find>Detail</find>
       <find>send</find>
       <find>chart</find>
+      <find>myModal</find>
+      <find>../</find>
     </findStrings>
     <replaceStrings>
       <replace>barang</replace>
@@ -207,12 +122,10 @@
         <option value="$PROJECT_DIR$/fasilitas-daftar.php" />
         <option value="$PROJECT_DIR$/_partials/debug.php" />
         <option value="$PROJECT_DIR$/components/alert.php" />
-        <option value="$PROJECT_DIR$/_partials/header-user.php" />
         <option value="$PROJECT_DIR$/scripts/shards-dashboards.1.3.1.min.js" />
         <option value="$PROJECT_DIR$/model/getdata.php" />
         <option value="$PROJECT_DIR$/components/modal-peminjaman.php" />
         <option value="$PROJECT_DIR$/components/modal-keranjang.php" />
-        <option value="$PROJECT_DIR$/_partials/topbar-user.php" />
         <option value="$PROJECT_DIR$/_partials/helper.php" />
         <option value="$PROJECT_DIR$/components/state_block.php" />
         <option value="$PROJECT_DIR$/model/notifikasi.php" />
@@ -234,7 +147,6 @@
         <option value="$PROJECT_DIR$/model/peminjaman.php" />
         <option value="$PROJECT_DIR$/model/barang.php" />
         <option value="$PROJECT_DIR$/model/keranjang.php" />
-        <option value="$PROJECT_DIR$/model/user.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/peminjaman-user-status.php" />
         <option value="$PROJECT_DIR$/peminjaman-user-list.php" />
@@ -245,6 +157,9 @@
         <option value="$PROJECT_DIR$/_partials/navbar-user.php" />
         <option value="$PROJECT_DIR$/_partials/navbar.php" />
         <option value="$PROJECT_DIR$/_partials/sidebar.php" />
+        <option value="$PROJECT_DIR$/_partials/topbar-user.php" />
+        <option value="$PROJECT_DIR$/_partials/header-user.php" />
+        <option value="$PROJECT_DIR$/model/user.php" />
       </list>
     </option>
   </component>
@@ -272,6 +187,11 @@
               <item name="Simfak" type="b2602c69:ProjectViewProjectNode" />
               <item name="Simfak" type="462c0819:PsiDirectoryNode" />
               <item name="_partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simfak" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simfak" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Simfak" type="b2602c69:ProjectViewProjectNode" />
@@ -326,12 +246,12 @@
       <workItem from="1560287667987" duration="800000" />
       <workItem from="1560300253653" duration="126109000" />
       <workItem from="1560911519208" duration="2801000" />
-      <workItem from="1560923324733" duration="427000" />
+      <workItem from="1560923324733" duration="844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130625000" />
+    <option name="totallyTimeSpent" value="131042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,7 +279,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.3294893" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.4108911" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -396,31 +316,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_partials/debug.php" />
-    <entry file="file://$PROJECT_DIR$/components/alert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/accents/warning.1.1.0.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13459">
-          <caret column="119350" selection-start-column="119350" selection-end-column="119350" />
-          <folding>
-            <element signature="e#44189#44352#1" expanded="true" />
-            <element signature="e#57470#57713#2" expanded="true" />
-            <element signature="e#58595#58844#2" expanded="true" />
-            <element signature="e#78367#78554#2" expanded="true" />
-            <element signature="e#78600#78789#2" expanded="true" />
-            <element signature="e#109141#109452#2" expanded="true" />
-            <element signature="e#111875#112134#2" expanded="true" />
-            <element signature="e#112244#112511#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_shards-ui@latest_dist_js_shards.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -439,13 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/topbar-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="139" lean-forward="true" selection-start-line="21" selection-start-column="139" selection-end-line="21" selection-end-column="139" />
         </state>
       </provider>
     </entry>
@@ -553,13 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/header-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -604,13 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
@@ -643,13 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2254">
           <caret line="161" column="22" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -688,6 +555,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/navbar-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/js-user.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/customjs.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/footer.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/footer-user.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/_partials/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -695,13 +588,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/js-user.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/_partials/modal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
           <caret line="1" column="35" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/topbar-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/header-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#aside#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_partials/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -712,24 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/navbar-user.php">
+    <entry file="file://$PROJECT_DIR$/model/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        <state relative-caret-position="28">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
