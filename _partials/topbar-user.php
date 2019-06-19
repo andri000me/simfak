@@ -12,18 +12,18 @@ $totalCart = $totalCart + $countBarang[0]->total+ $countRuangan[0]->total;
 <!--                TODO:add active navbar-->
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
-                        <a href="../peminjaman-user-list.php?kind=ruangan" class="nav-link active"><i
+                        <a href="peminjaman-user-list.php?kind=ruangan" class="nav-link active"><i
                                     class="material-icons">chrome_reader_mode</i> Daftar Fasilitas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../peminjaman-user-do.php" class="nav-link my-0">
+                        <a href="peminjaman-user-do.php" class="nav-link my-0">
                             <i class="material-icons">add_shopping_cart</i>
                             Peminjaman Fasilitas
                             <span class="badge badge-pill badge-danger" style="display: inline !important;"><?php echo $totalCart ?></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../peminjaman-user-status.php" class="nav-link"><i
+                        <a href="peminjaman-user-status.php" class="nav-link"><i
                                     class="material-icons">announcement</i> Status Peminjaman</a>
                     </li>
                 </ul>

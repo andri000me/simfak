@@ -45,7 +45,7 @@ $data_notif = get_data_notif($session['level']);
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button"
         aria-haspopup="true" aria-expanded="false">
-        <img class="user-avatar rounded-circle mr-2" src="../images/avatars/0.jpg" alt="User Avatar"> <span
+        <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar"> <span
           class="d-none d-md-inline-block"><?php echo $session['name']; ?></span>
       </a>
       <div class="dropdown-menu dropdown-menu-small">
@@ -55,7 +55,7 @@ $data_notif = get_data_notif($session['level']);
 <!--        <a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons"></i> Files</a>-->
 <!--        <a class="dropdown-item" href="transaction-history.html"><i class="material-icons"></i> Transactions</a>-->
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item text-danger" href="../model/user.php?f=logout">
+        <a class="dropdown-item text-danger" href="model/user.php?f=logout">
           <i class="material-icons text-danger"></i> Logout </a>
       </div>
     </li>

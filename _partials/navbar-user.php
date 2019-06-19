@@ -58,7 +58,7 @@ $data_notif = get_data_notif($session['nim']);
 <!--						<a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons"></i> Files</a>-->
 <!--						<a class="dropdown-item" href="transaction-history.html"><i class="material-icons"></i> Transactions</a>-->
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item text-danger" href="../model/user.php?f=logout">
+						<a class="dropdown-item text-danger" href="model/user.php?f=logout">
 							<i class="material-icons text-danger"></i> Logout </a>
 					</div>
 				</li>

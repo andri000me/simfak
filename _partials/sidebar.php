@@ -34,7 +34,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="../peminjaman-list.php">
+        <a class="nav-link " href="peminjaman-list.php">
           <i class="material-icons"></i>
           <span>Peminjaman</span>
         </a>
@@ -55,7 +55,7 @@
           <span>User Account</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
-          <a class="dropdown-item " href="../user-management.php">Daftar Pengguna</a>
+          <a class="dropdown-item " href="user-management.php">Daftar Pengguna</a>
         </div>
       </li>
       <!-- <li class="nav-item dropdown">
@@ -76,8 +76,8 @@
               <span>Daftar Fasilitas</span>
           </a>
           <div class="dropdown-menu dropdown-menu-small">
-              <a class="dropdown-item " href="../barang-list.php">Barang</a>
-              <a class="dropdown-item " href="../ruangan-list.php">Ruangan</a>
+              <a class="dropdown-item " href="barang-list.php">Barang</a>
+              <a class="dropdown-item " href="ruangan-list.php">Ruangan</a>
           </div>
       </li>
     </ul>

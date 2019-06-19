@@ -118,6 +118,19 @@ $get              = $_GET;
                                         </button>
                                     </form>
 	                                <?php endif;?>
+	                                <?php if($_SESSION['level'] == 'direktur'):?>
+                                        <form action="./model/peminjaman.php" method="post">
+                                            <input type="hidden" name="nim" value="<?php echo $peminjaman->akun_id ?>">
+                                            <input type="hidden" name="perihal" value="<?php echo $peminjaman->perihal ?>">
+                                            <input type="hidden" name="status" value="1">
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="submit" name="button" value="acceptdirektur" class="btn btn-white">
+                                                    <span class="text-success"><i class="material-icons">check</i></span> Approve </button>
+                                                <button type="submit" name="button" value="denydirektur" class="btn btn-white">
+                                                    <span class="text-danger"><i class="material-icons">clear</i></span> Reject </button>
+                                            </div>
+                                        </form>
+	                                <?php endif;?>
 	                                <?php if($_SESSION['level'] == 'kabag umum'):?>
                                         <form action="./model/peminjaman.php" method="post">
                                             <input type="hidden" name="nim" value="<?php echo $peminjaman->akun_id ?>">
