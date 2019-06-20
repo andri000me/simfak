@@ -19,9 +19,6 @@ function role( $role, $invers ) {
 		case 'bmn':
 			echo $level_router ? '<script>window.location.href = "error.php"</script>' : null;
 			break;
-		case 'direktur':
-			echo $level_router ? '<script>window.location.href = "error.php"</script>' : null;
-			break;
 		case 'kabag umum':
 			echo $level_router ? '<script>window.location.href = "error.php"</script>' : null;
 			break;

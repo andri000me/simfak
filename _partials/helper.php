@@ -24,15 +24,18 @@ function array_copy($array){
 	return $temp_array->getArrayCopy();
 }
 function get_status_message($number){
-	$status = (object) ['status'=>'Menunggu diproses BMN','color'=>'info','number'=>'30','message'=>'Sedang diproses dibagian BMN'];
+	$status = (object) ['status'=>'Menunggu konfirmasi Kabag Umum','color'=>'info','number'=>'30','message'=>'Sedang diproses dibagian Kabag Umum'];
+	if($number == 100){
+		$status = (object) ['status'=>'Diterima Kabag Umum','color'=>'warning','number'=>'44','message'=>'Disetujui oleh Kabag Umum'];
+	}
+	if($number == 101){
+		$status = (object) ['status'=>'Ditolak Kabag Umum','color'=>'danger','number'=>'99','message'=>'Ditolak oleh Kabag Umum'];
+	}
 	if($number == 1){
-		$status = (object) ['status'=>'Menunggu Persetujuan Kabag Umum','color'=>'warning','number'=>'60','message'=>'Surat telah dibuat, menuggu persetujuan kabag umum'];
+		$status = (object) ['status'=>'Di Ijinkan oleh BMN','color'=>'success','number'=>'99','message'=>'Telah disetujui oleh BMN'];
 	}
 	if($number == 2){
-		$status = (object) ['status'=>'Diterima Kabag Umum','color'=>'success','number'=>'100','message'=>'Disetujui oleh Kabag Umum'];
-	}
-	if($number == 22){
-		$status = (object) ['status'=>'Ditolak Kabag Umum','color'=>'danger','number'=>'99','message'=>'Ditolak oleh Kabag Umum'];
+		$status = (object) ['status'=>'Telah dikembalikan','color'=>'info','number'=>'100','message'=>'Telah dikembalikan'];
 	}
 	return $status;
 }

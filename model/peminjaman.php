@@ -47,7 +47,7 @@ function add( $post ) {
 	}
 
 	//set success
-	$q = "INSERT INTO notifikasi(pengirim, penerima, pesan,link,kategori) VALUES ('$_SESSION[nim]','bmn','Mahasiswa mengajukan peminjaman fasilitas kampus.','../peminjaman-list.php','permohonan')";
+	$q = "INSERT INTO notifikasi(pengirim, penerima, pesan,link,kategori) VALUES ('$_SESSION[nim]','kabag umum','Mahasiswa mengajukan peminjaman fasilitas kampus.','./peminjaman-list.php','permohonan')";
 	$db->query( $q );
 	$_SESSION['status'] = (object) [ 'status' => 'success', 'message' => 'Pengajuan sedang diproses' ];
 	echo json_encode( array( 'status' => 'success' ) );
@@ -58,8 +58,14 @@ function get_all_peminjaman($for = null) {
 	$q = "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pr.akun_id FROM peminjaman_ruangan pr LEFT OUTER JOIN mahasiswa m ON pr.akun_id = m.nim";
 	if($for!= null){
 		if($for == 'kabag umum'){
-			//kabag umum only see peminjaman with status == 1
-			$q .= " WHERE status = 1";
+			//kabag menerima permintaan dari mahasiswa
+			//kabag umum only see peminjaman with status == 0
+			$q .= " WHERE status = 0";
+		}
+		if($for == 'bmn'){
+			//bmn menerima permintaan dari mahasiswa
+			//bmn umum can't see peminjaman with status == 0
+			$q .= " WHERE status <> 0";
 		}
 	}
 	$db->query($q);
@@ -67,8 +73,14 @@ function get_all_peminjaman($for = null) {
 	$q = "SELECT DISTINCT tanggal_transaksi,tanggal_kembali,status,perihal,m.nama_mahasiswa,pb.akun_id FROM peminjaman_barang pb LEFT OUTER JOIN mahasiswa m ON pb.akun_id = m.nim";
 	if($for!= null){
 		if($for == 'kabag umum'){
-			//kabag umum only see peminjaman with status == 1
-			$q .= " WHERE status = 1";
+			//kabag menerima permintaan dari mahasiswa
+			//kabag umum only see peminjaman with status == 0
+			$q .= " WHERE status = 0";
+		}
+		if($for == 'bmn'){
+			//bmn menerima permintaan dari mahasiswa
+			//bmn umum can't see peminjaman with status == 0
+			$q .= " WHERE status <> 0";
 		}
 	}
 	$db->query($q);
@@ -115,12 +127,12 @@ function change_status( $post ) {
 		if ( $db->query( $q ) ) {
 			$message = '';
 			if($post['status'] == 1){
-				$message = "Permohonan berhasil dikirim ke kabag umum";
+				$message = "Permohonan disetujui sepenuhnya";
 			}
-			if($post['status'] == 2){
+			if($post['status'] == 100){
 				$message = "Persetujuan perminjaman berhasil";
 			}
-			if($post['status'] == 22){
+			if($post['status'] == 101){
 				$message = "Penolakan perminjaman berhasil";
 			}
 			$_SESSION['status'] = (object) [ 'status'  => 'success',
@@ -133,8 +145,19 @@ function change_status( $post ) {
 
 }
 
-function cetak_permohonan( $post ) {
-
+function restore_stok($post,$mode = null){
+	$akun_id = $post['nim'];
+	$perihal = $post['perihal'];
+	$status  = $post['status'];
+	$db = new Database();
+	$q = "DELETE FROM peminjaman_barang WHERE akun_id = '$akun_id' AND status = '$status' AND perihal = '$perihal'";
+	$db->query($q);
+	$q = "DELETE FROM peminjaman_ruangan WHERE akun_id = '$akun_id' AND status = '$status' AND perihal = '$perihal'";
+	$db->query( $q);
+	if($mode!= null && $mode == 'redirect'){
+		$_SESSION['status'] = (object) ['status'=>'success','message'=>'Pengembalian Berhasil, Akan dicek oleh pihak bmn'];
+		header( 'Location: ../peminjaman-user-status.php');
+	}
 }
 
 if ( isset( $_GET['f'] ) ) {
@@ -158,29 +181,31 @@ if ( isset( $_POST['button'] ) ) {
 			break;
 		case 'send':
 			change_status( $post );
-			send_notif('bmn','kabag umum',"Permintaan persetujuan peminjaman fasilitas perihal $post[perihal]",'../peminjaman-list.php','Perizinan');
-			update_notif($post['nim'],'bmn',"Mahasiswa mengajukan peminjaman fasilitas kampus.");
+			send_notif('bmn',$post['nim'],"Permintaan persetujuan peminjaman fasilitas perihal $post[perihal] <b class=\"text-success\">disetujui</b> oleh BMN",'./peminjaman-user-status.php','Perizinan');
 			break;
 		case 'accept':
-			$post['status'] = 2;
+			$post['status'] = 100;
 			change_status( $post );
-			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-success">diterima</b> oleh kabag umum';
-			send_notif('kabag umum',$post['nim'],$pesan,'../peminjaman-list.php','Perizinan');
-			$new_pesan = "Permintaan persetujuan peminjaman fasilitas perihal ".$post['perihal'];
-			update_notif('bmn','kabag umum',$new_pesan);
+			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-success">diterima</b> oleh kabag umum, akan diteruskan ke BMN';
+			send_notif('kabag umum',$post['nim'],$pesan,'./peminjaman-user-status.php','Perizinan');
+			send_notif('kabag umum','bmn',$pesan,'./peminjaman-list.php','Perizinan');
+			$new_pesan = "Mahasiswa mengajukan peminjaman fasilitas kampus.";
+			update_notif($post['nim'],'kabag umum',$new_pesan);
 			break;
 		case 'deny':
-			$post['status'] = 22;
+			$post['status'] = 101;
 			change_status( $post );
-			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-danger">ditolak</b> oleh kabag umum';
-			send_notif('kabag umum',$post['nim'],$pesan,'../peminjaman-list.php','Perizinan');
-			$new_pesan = "Permintaan persetujuan peminjaman fasilitas perihal ".$post['perihal'];
-			update_notif('bmn','kabag umum',$new_pesan);
+			$pesan = 'Peminjaman fasilitas perihal '.$post['perihal'].', <b class="text-danger">ditolak</b> oleh kabag umum, akan diteruskan ke BMN';
+			send_notif('kabag umum',$post['nim'],$pesan,'./peminjaman-user-status.php','Perizinan');
+			$new_pesan = "Mahasiswa mengajukan peminjaman fasilitas kampus.";
+			update_notif($post['nim'],'kabag umum',$new_pesan);
+			restore_stok( $post);
 			break;
-		case 'print':
-//			cetak_permohonan( $post );
+		case 'kembalikan':
+			restore_stok( $post,'redirect');
 			break;
 		default:
+			echo 'wrong direction';
 			break;
 	}
 }

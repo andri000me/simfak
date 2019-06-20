@@ -8,11 +8,13 @@ $mergedPeminjaman = [];
 if($_SESSION['level'] == 'kabag umum'){
 	$mergedPeminjaman = get_all_peminjaman('kabag umum');
 }
+elseif($_SESSION['level'] == 'bmn'){
+	$mergedPeminjaman = get_all_peminjaman('bmn');
+}
 else {
 	$mergedPeminjaman = get_all_peminjaman();
 }
 $get              = $_GET;
-//var_dump($mergedPeminjaman);
 ?>
 <body class="h-100" data-gr-c-s-loaded="true">
 <div class="container-fluid">
@@ -102,8 +104,8 @@ $get              = $_GET;
                                         <input type="hidden" name="nim" value="<?php echo $peminjaman->akun_id ?>">
                                         <input type="hidden" name="perihal" value="<?php echo $peminjaman->perihal ?>">
                                         <input type="hidden" name="status" value="1">
-                                        <button type="submit" name="button" <?php echo $peminjaman->status!=0?'disabled':null?> value="send" class="btn btn-white" data-toggle="tiptool"
-                                                data-placement="top" title="Infokan ke Kabag">
+                                        <button type="submit" name="button" <?php echo $peminjaman->status!=100?'disabled':null?> value="send" class="btn btn-white" data-toggle="tiptool"
+                                                data-placement="top" title="Infokan ke mahasiswa">
                                             <i class="material-icons">mail</i>
                                         </button>
                                     </form>
@@ -113,23 +115,10 @@ $get              = $_GET;
                                         <input type="hidden" name="perihal" value="<?php echo $peminjaman->perihal ?>">
                                         <input type="hidden" name="status" value="1">
                                         <button type="submit" class="btn btn-white" name="button" value="print" data-toggle="tiptool"
-                                                data-placement="top" <?php echo $peminjaman->status!=0?'disabled':null?> title="Cetak Surat Permohonan">
+                                                data-placement="top" <?php echo $peminjaman->status!=100?'disabled':null?> title="Cetak Surat Permohonan">
                                             <i class="material-icons">local_printshop</i>
                                         </button>
                                     </form>
-	                                <?php endif;?>
-	                                <?php if($_SESSION['level'] == 'direktur'):?>
-                                        <form action="./model/peminjaman.php" method="post">
-                                            <input type="hidden" name="nim" value="<?php echo $peminjaman->akun_id ?>">
-                                            <input type="hidden" name="perihal" value="<?php echo $peminjaman->perihal ?>">
-                                            <input type="hidden" name="status" value="1">
-                                            <div class="btn-group btn-group-sm">
-                                                <button type="submit" name="button" value="acceptdirektur" class="btn btn-white">
-                                                    <span class="text-success"><i class="material-icons">check</i></span> Approve </button>
-                                                <button type="submit" name="button" value="denydirektur" class="btn btn-white">
-                                                    <span class="text-danger"><i class="material-icons">clear</i></span> Reject </button>
-                                            </div>
-                                        </form>
 	                                <?php endif;?>
 	                                <?php if($_SESSION['level'] == 'kabag umum'):?>
                                         <form action="./model/peminjaman.php" method="post">

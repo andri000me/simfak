@@ -17,7 +17,7 @@ require_once './_partials/header.php';?>
                                     <h5 class="auth-form__title text-center mb-4">Buat akun untuk melakukan peminjaman</h5>
                                     <form method="POST" action="./model/user.php">
                                         <div class="form-group">
-                                            <label for="nim">Masukkan NIM</label>
+                                            <label for="nim">Masukkan Nomor Identitas</label>
                                             <input type="text" class="form-control" id="nim" name="nim"
                                                 aria-describedby="emailHelp" placeholder="Enter ID" autocomplete="off">
                                         </div>
