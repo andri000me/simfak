@@ -262,7 +262,7 @@ function get_riwayat( $perihal, $type ) {
                                             <td><?php echo $riwayat->tanggal_transaksi ?></td>
                                             <td><?php echo $riwayat->perihal ?></td>
                                             <td style="width: 40%;">
-                                                <p class="text-<?php echo $riwayat->status==1?'success':'danger'?>"><?php echo $riwayat->status==1?'Dikembalikan':'Ditolak'?></p>
+                                                <p class="text-<?php echo $riwayat->status == 1 ? $riwayat->status == 101 ? "warning" : "info" : "success"?>"><?php echo $riwayat->status == 1 ? $riwayat->status == 101 ? "Ditolak" : "Belum dicek" : "Dikembalikan"?></p>
                                             </td>
                                             <td>
                                                 <div class="btn-group btn-group-sm">

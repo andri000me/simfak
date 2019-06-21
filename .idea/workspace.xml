@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e19301b-82d5-4a82-a3bd-78bcd438a4bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f62ea68-1d98-4915-94e3-4b72a03cfe62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f62ea68-1d98-4915-94e3-4b72a03cfe62.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_partials/helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/peminjaman.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/peminjaman.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peminjaman-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/peminjaman-list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peminjaman-user-status.php" beforeDir="false" afterPath="$PROJECT_DIR$/peminjaman-user-status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/router/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-login.php" beforeDir="false" afterPath="$PROJECT_DIR$/user-login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,21 +65,26 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peminjaman-list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1123">
-              <caret line="117" column="122" selection-start-line="117" selection-start-column="69" selection-end-line="117" selection-end-column="122" />
+            <state relative-caret-position="472">
+              <caret line="290" column="30" lean-forward="true" selection-start-line="290" selection-start-column="30" selection-end-line="290" selection-end-column="30" />
+              <folding>
+                <element signature="n#table#0;n#div#1;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+                <element signature="e#2530#8896#0#PHP" />
+                <element signature="n#table#1;n#div#1;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/peminjaman.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="183" column="121" selection-start-line="183" selection-start-column="121" selection-end-line="183" selection-end-column="121" />
+            <state relative-caret-position="1099">
+              <caret line="240" column="45" lean-forward="true" selection-start-line="240" selection-start-column="45" selection-end-line="240" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -92,44 +92,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_partials/helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+            <state relative-caret-position="456">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peminjaman-user-status.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="263" column="60" selection-start-line="263" selection-start-column="55" selection-end-line="263" selection-end-column="60" />
+            <state relative-caret-position="164">
+              <caret line="264" column="146" selection-start-line="264" selection-start-column="146" selection-end-line="264" selection-end-column="146" />
               <folding>
-                <element signature="e#3538#13227#0#PHP" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="e#7369#10047#0#PHP" />
-                <element signature="e#10286#12987#0#PHP" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peminjaman-user-list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-468">
-              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peminjaman-user-do.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#h6#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,11 +141,15 @@
       <find>../</find>
       <find>detail</find>
       <find>pengajuan</find>
+      <find>$peminjaman</find>
+      <find>history</find>
+      <find>kembalikan</find>
     </findStrings>
     <replaceStrings>
       <replace>barang</replace>
       <replace>ruangan</replace>
       <replace>riwayat</replace>
+      <replace>$history</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -221,17 +200,17 @@
         <option value="$PROJECT_DIR$/model/user.php" />
         <option value="$PROJECT_DIR$/router/index.php" />
         <option value="$PROJECT_DIR$/_partials/navbar.php" />
-        <option value="$PROJECT_DIR$/peminjaman-list.php" />
         <option value="$PROJECT_DIR$/_partials/helper.php" />
-        <option value="$PROJECT_DIR$/peminjaman-user-status.php" />
         <option value="$PROJECT_DIR$/model/peminjaman.php" />
+        <option value="$PROJECT_DIR$/peminjaman-list.php" />
+        <option value="$PROJECT_DIR$/peminjaman-user-status.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
-    <option name="height" value="700" />
+    <option name="height" value="701" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -241,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,14 +252,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -317,12 +296,13 @@
       <workItem from="1560300253653" duration="126109000" />
       <workItem from="1560911519208" duration="2801000" />
       <workItem from="1560923324733" duration="4685000" />
-      <workItem from="1560986238358" duration="8366000" />
+      <workItem from="1560986238358" duration="8660000" />
+      <workItem from="1561069411854" duration="6298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143249000" />
+    <option name="totallyTimeSpent" value="149841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,7 +317,7 @@
     <frame x="0" y="23" width="1366" height="701" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.18636364" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.15681818" />
       <window_info id="Structure" order="1" sideWeight="0.50082374" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -350,7 +330,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.3294893" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.4108911" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.41021416" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -659,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_partials/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-208">
@@ -673,10 +646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peminjaman-list.php">
+    <entry file="file://$PROJECT_DIR$/peminjaman-user-list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1123">
-          <caret line="117" column="122" selection-start-line="117" selection-start-column="69" selection-end-line="117" selection-end-column="122" />
+        <state relative-caret-position="504">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -684,37 +657,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#h6#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peminjaman-user-list.php">
+    <entry file="file://$PROJECT_DIR$/_partials/helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peminjaman-user-status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="263" column="60" selection-start-line="263" selection-start-column="55" selection-end-line="263" selection-end-column="60" />
-          <folding>
-            <element signature="e#3538#13227#0#PHP" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="e#7369#10047#0#PHP" />
-            <element signature="e#10286#12987#0#PHP" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="456">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/peminjaman.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="183" column="121" selection-start-line="183" selection-start-column="121" selection-end-line="183" selection-end-column="121" />
+        <state relative-caret-position="1099">
+          <caret line="240" column="45" lean-forward="true" selection-start-line="240" selection-start-column="45" selection-end-line="240" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peminjaman-list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="290" column="30" lean-forward="true" selection-start-line="290" selection-start-column="30" selection-end-line="290" selection-end-column="30" />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="e#2530#8896#0#PHP" />
+            <element signature="n#table#1;n#div#1;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peminjaman-user-status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="264" column="146" selection-start-line="264" selection-start-column="146" selection-end-line="264" selection-end-column="146" />
+          <folding>
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
