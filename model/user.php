@@ -16,8 +16,11 @@ function register( $post ) {
 	} else {
 		$query = "INSERT INTO akun(username,password,level_id) values ('$uname','$pass',2)";
 		if ( $database->query( $query ) ) {
-			$database->close();
-			$_SESSION['status'] = (object) [ 'status' => 'success', 'message' => 'Anda berhasil registrasi' ];
+			$query = "INSERT INTO `mahasiswa` (`nim`, `nama_mahasiswa`, `email_mahasiswa`) VALUES ('$post[nim]', '$post[nama]', NULL)";
+			if($database->query($query)){
+				$database->close();
+				$_SESSION['status'] = (object) [ 'status' => 'success', 'message' => 'Anda berhasil registrasi' ];
+			}
 		}
 	}
 

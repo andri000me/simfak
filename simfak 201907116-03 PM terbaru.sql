@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.3.9-MariaDB)
 # Database: simfak
-# Generation Time: 2019-06-20 02:13:25 +0000
+# Generation Time: 2019-07-11 10:03:09 +0000
 # ************************************************************
 
 
@@ -29,8 +29,11 @@ CREATE TABLE `akun` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(25) DEFAULT NULL,
   `password` varchar(25) DEFAULT NULL,
-  `level_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `level_id` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_akun_level` (`level_id`),
+  KEY `index_username` (`username`),
+  CONSTRAINT `fk_akun_level` FOREIGN KEY (`level_id`) REFERENCES `level` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `akun` WRITE;
@@ -42,7 +45,8 @@ VALUES
 	(29,'direktur','direktur',5),
 	(30,'bmn','bmn',3),
 	(31,'admin','admin',1),
-	(32,'kabag','kabag',4);
+	(32,'kabag','kabag',4),
+	(34,'A1315041','123',2);
 
 /*!40000 ALTER TABLE `akun` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -66,8 +70,8 @@ LOCK TABLES `barang` WRITE;
 
 INSERT INTO `barang` (`id`, `nama_barang`, `jumlah`, `waktu_penambahan`)
 VALUES
-	(1,'Kursi',360,'2019-06-20 10:09:14'),
-	(2,'Meja',100,'2019-06-20 10:01:18'),
+	(1,'Kursi',400,'2019-06-21 12:31:00'),
+	(2,'Meja',100,'2019-06-21 12:31:00'),
 	(3,'Ambal',400,'2019-06-20 10:01:18');
 
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
@@ -81,10 +85,14 @@ DROP TABLE IF EXISTS `cart_barang`;
 
 CREATE TABLE `cart_barang` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `barang_id` int(11) DEFAULT NULL,
+  `barang_id` int(11) unsigned DEFAULT NULL,
   `akun_id` varchar(25) DEFAULT NULL,
   `jumlah` int(11) DEFAULT 0,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `barang_id` (`barang_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `cart_barang_ibfk_1` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cart_barang_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -96,9 +104,13 @@ DROP TABLE IF EXISTS `cart_ruangan`;
 
 CREATE TABLE `cart_ruangan` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ruangan_id` int(11) DEFAULT NULL,
+  `ruangan_id` int(11) unsigned DEFAULT NULL,
   `akun_id` varchar(25) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `ruangan_id` (`ruangan_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `cart_ruangan_ibfk_1` FOREIGN KEY (`ruangan_id`) REFERENCES `ruangan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cart_ruangan_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -138,13 +150,38 @@ CREATE TABLE `mahasiswa` (
   `nim` varchar(25) NOT NULL DEFAULT '',
   `nama_mahasiswa` varchar(100) DEFAULT NULL,
   `email_mahasiswa` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`nim`)
+  PRIMARY KEY (`nim`),
+  CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `akun` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `mahasiswa` WRITE;
 /*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
 
 INSERT INTO `mahasiswa` (`nim`, `nama_mahasiswa`, `email_mahasiswa`)
+VALUES
+	('A1315041','Jumrani',NULL),
+	('A1316021','Danar Widi Utomo',NULL);
+
+/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table master_mahasiswa
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `master_mahasiswa`;
+
+CREATE TABLE `master_mahasiswa` (
+  `nim` varchar(25) NOT NULL DEFAULT '',
+  `nama_mahasiswa` varchar(100) DEFAULT NULL,
+  `email_mahasiswa` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`nim`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `master_mahasiswa` WRITE;
+/*!40000 ALTER TABLE `master_mahasiswa` DISABLE KEYS */;
+
+INSERT INTO `master_mahasiswa` (`nim`, `nama_mahasiswa`, `email_mahasiswa`)
 VALUES
 	('A1315041','Jumrani',NULL),
 	('A1315108','Yulia Agustin',NULL),
@@ -263,7 +300,7 @@ VALUES
 	('A1316128','Yurice Buntu',NULL),
 	('A1316129','Yurisma Baihaqi',NULL);
 
-/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
+/*!40000 ALTER TABLE `master_mahasiswa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -295,7 +332,8 @@ VALUES
 	(34,'A1316021','kabag umum','Mahasiswa mengajukan peminjaman fasilitas kampus.','./peminjaman-list.php','permohonan',1),
 	(35,'kabag umum','A1316021','Peminjaman fasilitas perihal Acara sambutan DPR kalsel, <b class=\"text-success\">diterima</b> oleh kabag umum, akan diteruskan ke BMN','./peminjaman-user-status.php','Perizinan',0),
 	(36,'kabag umum','bmn','Peminjaman fasilitas perihal Acara sambutan DPR kalsel, <b class=\"text-success\">diterima</b> oleh kabag umum, akan diteruskan ke BMN','./peminjaman-list.php','Perizinan',0),
-	(37,'bmn','A1316021','Permintaan persetujuan peminjaman fasilitas perihal Acara sambutan DPR kalsel <b class=\"text-success\">disetujui</b> oleh BMN','./peminjaman-user-status.php','Perizinan',0);
+	(37,'bmn','A1316021','Permintaan persetujuan peminjaman fasilitas perihal Acara sambutan DPR kalsel <b class=\"text-success\">disetujui</b> oleh BMN','./peminjaman-user-status.php','Perizinan',0),
+	(39,'A1316021','kabag umum','Mahasiswa mengajukan peminjaman fasilitas kampus.','./peminjaman-list.php','permohonan',1);
 
 /*!40000 ALTER TABLE `notifikasi` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -310,7 +348,8 @@ CREATE TABLE `pegawai` (
   `nik` varchar(25) NOT NULL DEFAULT '',
   `nama_pegawai` varchar(255) DEFAULT NULL,
   `email_pegawai` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`nik`)
+  PRIMARY KEY (`nik`),
+  CONSTRAINT `pegawai_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `pegawai` WRITE;
@@ -318,9 +357,9 @@ LOCK TABLES `pegawai` WRITE;
 
 INSERT INTO `pegawai` (`nik`, `nama_pegawai`, `email_pegawai`)
 VALUES
-	('admin','Admin','admin@politala.ac.id'),
-	('bmn','Bmn','bmn@politala.ac.id'),
-	('kabag','Kabag Umum','kabagumum@politala.ac.id');
+	('admin','Admin',NULL),
+	('bmn','Bmn',NULL),
+	('direktur','Direktur',NULL);
 
 /*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -333,25 +372,20 @@ DROP TABLE IF EXISTS `peminjaman_barang`;
 
 CREATE TABLE `peminjaman_barang` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `barang_id` int(11) DEFAULT NULL,
+  `barang_id` int(11) unsigned DEFAULT NULL,
   `tanggal_transaksi` date DEFAULT '0000-00-00',
   `tanggal_kembali` date NOT NULL DEFAULT '0000-00-00',
   `status` int(11) DEFAULT 0,
   `jumlah` int(11) DEFAULT 0,
   `akun_id` varchar(25) DEFAULT NULL,
   `perihal` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `barang_id` (`barang_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `peminjaman_barang_ibfk_1` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `peminjaman_barang_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-LOCK TABLES `peminjaman_barang` WRITE;
-/*!40000 ALTER TABLE `peminjaman_barang` DISABLE KEYS */;
-
-INSERT INTO `peminjaman_barang` (`id`, `barang_id`, `tanggal_transaksi`, `tanggal_kembali`, `status`, `jumlah`, `akun_id`, `perihal`)
-VALUES
-	(54,1,'2019-06-20','2019-06-20',1,40,'A1316021','Acara sambutan DPR kalsel');
-
-/*!40000 ALTER TABLE `peminjaman_barang` ENABLE KEYS */;
-UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" */;;
@@ -377,24 +411,19 @@ DROP TABLE IF EXISTS `peminjaman_ruangan`;
 
 CREATE TABLE `peminjaman_ruangan` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ruangan_id` int(11) DEFAULT NULL,
+  `ruangan_id` int(11) unsigned DEFAULT NULL,
   `tanggal_transaksi` date DEFAULT NULL,
   `tanggal_kembali` date DEFAULT '0000-00-00',
   `status` int(11) DEFAULT 0,
   `akun_id` varchar(25) DEFAULT '',
   `perihal` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `ruangan_id` (`ruangan_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `peminjaman_ruangan_ibfk_1` FOREIGN KEY (`ruangan_id`) REFERENCES `ruangan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `peminjaman_ruangan_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-LOCK TABLES `peminjaman_ruangan` WRITE;
-/*!40000 ALTER TABLE `peminjaman_ruangan` DISABLE KEYS */;
-
-INSERT INTO `peminjaman_ruangan` (`id`, `ruangan_id`, `tanggal_transaksi`, `tanggal_kembali`, `status`, `akun_id`, `perihal`)
-VALUES
-	(38,1,'2019-06-20','2019-06-20',1,'A1316021','Acara sambutan DPR kalsel');
-
-/*!40000 ALTER TABLE `peminjaman_ruangan` ENABLE KEYS */;
-UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" */;;
@@ -445,14 +474,18 @@ DROP TABLE IF EXISTS `riwayat_barang`;
 
 CREATE TABLE `riwayat_barang` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `barang_id` int(11) DEFAULT NULL,
+  `barang_id` int(11) unsigned DEFAULT NULL,
   `tanggal_transaksi` date DEFAULT NULL,
   `tanggal_kembali` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `akun_id` varchar(25) DEFAULT NULL,
   `perihal` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `barang_id` (`barang_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `riwayat_barang_ibfk_1` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `riwayat_barang_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `riwayat_barang` WRITE;
@@ -460,9 +493,9 @@ LOCK TABLES `riwayat_barang` WRITE;
 
 INSERT INTO `riwayat_barang` (`id`, `barang_id`, `tanggal_transaksi`, `tanggal_kembali`, `status`, `jumlah`, `akun_id`, `perihal`)
 VALUES
-	(1,1,'2019-06-26','2019-06-26',1,40,'A1316021','Acara Pelantikan Presma di TIP'),
-	(2,2,'2019-06-26','2019-06-26',1,5,'A1316021','Acara Pelantikan Presma di TIP'),
-	(3,3,'2019-06-26','2019-06-26',1,5,'A1316021','Acara Pelantikan Presma di TIP');
+	(1,1,'2019-06-26','2019-06-26',111,40,'A1316021','Acara Pelantikan Presma di TIP'),
+	(2,2,'2019-06-26','2019-06-26',111,5,'A1316021','Acara Pelantikan Presma di TIP'),
+	(3,3,'2019-06-26','2019-06-26',111,5,'A1316021','Acara Pelantikan Presma di TIP');
 
 /*!40000 ALTER TABLE `riwayat_barang` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -475,13 +508,17 @@ DROP TABLE IF EXISTS `riwayat_ruangan`;
 
 CREATE TABLE `riwayat_ruangan` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ruangan_id` int(11) DEFAULT NULL,
+  `ruangan_id` int(11) unsigned DEFAULT NULL,
   `tanggal_transaksi` date DEFAULT NULL,
   `tanggal_kembali` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `akun_id` varchar(25) DEFAULT NULL,
   `perihal` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `ruangan_id` (`ruangan_id`),
+  KEY `akun_id` (`akun_id`),
+  CONSTRAINT `riwayat_ruangan_ibfk_1` FOREIGN KEY (`ruangan_id`) REFERENCES `ruangan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `riwayat_ruangan_ibfk_2` FOREIGN KEY (`akun_id`) REFERENCES `akun` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `riwayat_ruangan` WRITE;
@@ -489,7 +526,7 @@ LOCK TABLES `riwayat_ruangan` WRITE;
 
 INSERT INTO `riwayat_ruangan` (`id`, `ruangan_id`, `tanggal_transaksi`, `tanggal_kembali`, `status`, `akun_id`, `perihal`)
 VALUES
-	(3,1,'2019-06-26','2019-06-26',1,'A1316021','Acara Pelantikan Presma di TIP');
+	(3,1,'2019-06-26','2019-06-26',111,'A1316021','Acara Pelantikan Presma di TIP');
 
 /*!40000 ALTER TABLE `riwayat_ruangan` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -503,9 +540,11 @@ DROP TABLE IF EXISTS `ruangan`;
 CREATE TABLE `ruangan` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nama_ruangan` varchar(100) DEFAULT NULL,
-  `prodi_id` int(11) DEFAULT NULL,
+  `prodi_id` int(11) unsigned DEFAULT NULL,
   `status` int(1) DEFAULT 0,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `prodi_id` (`prodi_id`),
+  CONSTRAINT `ruangan_ibfk_1` FOREIGN KEY (`prodi_id`) REFERENCES `prodi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `ruangan` WRITE;
@@ -513,7 +552,7 @@ LOCK TABLES `ruangan` WRITE;
 
 INSERT INTO `ruangan` (`id`, `nama_ruangan`, `prodi_id`, `status`)
 VALUES
-	(1,'Karet',2,1),
+	(1,'Karet',2,0),
 	(2,'Cengkeh',2,0),
 	(3,'Bootstrap',1,0),
 	(4,'Java',1,0),

@@ -28,7 +28,7 @@ require_once './_partials/header.php';
                                                 aria-describedby="emailHelp" placeholder="Enter ID" autocomplete="off"
                                                 name="nim" required>
                                             <input type="text" class="form-control mt-1" id="mhs"
-                                                aria-describedby="emailHelp" readonly placeholder="Nama Mhs"
+                                                aria-describedby="emailHelp" name="nama" readonly placeholder="Nama Mhs"
                                                 autocomplete="off">
                                         </div>
                                         <div class="form-group" id='inputPass'>

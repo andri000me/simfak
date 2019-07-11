@@ -33,12 +33,14 @@
           <span>Statistik</span>
         </a>
       </li>
+      <?php if($_SESSION['level']=='admin'):?>
       <li class="nav-item">
         <a class="nav-link " href="peminjaman-list.php">
           <i class="material-icons"></i>
           <span>Peminjaman</span>
         </a>
       </li>
+      <?php endif; ?>
 <!--      <li class="nav-item">-->
 <!--        <a class="nav-link " href="../peminjaman-list.php">-->
 <!--          <i class="material-icons">info</i>-->

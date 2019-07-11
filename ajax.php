@@ -9,7 +9,7 @@ switch ($get['data']){
 }
 function getMhs ($keyword = null){
     $database = new Database();
-    $query = "SELECT * from mahasiswa WHERE nim LIKE '$keyword%'";
+    $query = "SELECT * from master_mahasiswa WHERE nim LIKE '$keyword%'";
     // var_dump($query);
     $database->query($query);
     $mahasiswa = $database->fetch();
