@@ -1,8 +1,8 @@
 <?php
 require_once './model/getdata.php';
 $totalCart = 0;
-$countBarang = get_data("SELECT COUNT(*) as total FROM cart_barang");
-$countRuangan = get_data("SELECT COUNT(*) as total FROM cart_ruangan");
+$countBarang = get_data("SELECT COUNT(*) as total FROM cart_barang WHERE akun_id = '$_SESSION[nim]'");
+$countRuangan = get_data("SELECT COUNT(*) as total FROM cart_ruangan WHERE akun_id = '$_SESSION[nim]'");
 $totalCart = $totalCart + $countBarang[0]->total+ $countRuangan[0]->total;
 ?>
 <div class="header-navbar nav-wrapper collapse d-lg-flex p-0 bg-white border-top">
