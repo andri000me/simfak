@@ -194,7 +194,7 @@ $ruanganChart     = array( $ruangan_dipinjam,$tot_ruangan_dipinjam  );
         var ctxr = document.getElementById('chart-ruangan').getContext('2d');
         var ctxdb = document.getElementById('chart-detail-barang').getContext('2d');
         window.myBar = new Chart(ctxdb, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: configDetailBarang,
             options: {
                 title: {

@@ -69,7 +69,7 @@ $datas      = get_data( $query );
                                                 class="material-icons">add</i></button>
                                     <div class="card-body px-0 pb-0 pt-1">
                                         <div class="d-flex px-3 align-items-start flex-column" style="height: 100px;">
-                                            <div class="mt-0 mb-auto stats-small__data">
+                                            <div class="mt-0 mb-auto">
                                                 <span class="stats-small__label mb-1 text-uppercase"><?php echo $table ?></span>
                                                 <h6 class="stats-small__value count m-0"><?php echo $item->{$objectName} ?></h6>
                                             </div>
